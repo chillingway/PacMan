@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="arcade">
+      <section class="hud" aria-label="Game status">
+        <div>
+          <span class="label">1UP</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">HIGH SCORE</span>
+          <strong id="highScore">0</strong>
+        </div>
+        <div>
+          <span class="label">LEVEL</span>
+          <strong id="level">1</strong>
+        </div>
+      </section>
+
+      <canvas id="game" width="224" height="288" aria-label="Pac-Man game board" tabindex="0"></canvas>
+
+      <section class="controls" aria-label="Game controls">
+        <div id="message">READY!</div>
+        <button type="button" id="startButton">Start</button>
+        <button type="button" id="restartButton">Restart</button>
+      </section>
+
+      <section class="mobile-controls" aria-label="Directional controls">
+        <button type="button" data-dir="up" aria-label="Up">▲</button>
+        <button type="button" data-dir="left" aria-label="Left">◀</button>
+        <button type="button" data-dir="right" aria-label="Right">▶</button>
+        <button type="button" data-dir="down" aria-label="Down">▼</button>
+      </section>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
