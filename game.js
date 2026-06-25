@@ -276,7 +276,7 @@ function makeGhost(id, name, x, y, dir, color, scatterTarget) {
     color,
     scatterTarget,
     mode: id === "blinky" ? "scatter" : "house",
-    releaseTimer: { blinky: 0, pinky: 2.5, inky: 5.5, clyde: 8.5 }[id],
+    releaseTimer: { blinky: 0, pinky: 0.8, inky: 1.8, clyde: 3 }[id],
     respawnTimer: 0,
     eaten: false,
   };
@@ -483,7 +483,7 @@ function updateGhosts(dt) {
       ghost.frightenedTimer -= dt;
       if (ghost.frightenedTimer <= 0) ghost.mode = globalGhostMode();
     }
-    if (aligned(ghost)) {
+    if (aligned(ghost) || ghost.dir === "none") {
       snapToTile(ghost);
       ghost.dir = chooseGhostDirection(ghost);
     }
@@ -493,9 +493,9 @@ function updateGhosts(dt) {
 }
 
 function ghostSpeed(ghost) {
-  if (ghost.mode === "eaten") return 105;
-  if (ghost.mode === "frightened") return Math.max(26, pacman.speed * 0.42);
-  return Math.max(34, pacman.speed * 0.62);
+  if (ghost.mode === "eaten") return Math.max(118, pacman.speed * 1.35);
+  if (ghost.mode === "frightened") return Math.max(46, pacman.speed * 0.68);
+  return Math.max(62, pacman.speed * 0.9);
 }
 
 function chooseGhostDirection(ghost) {
