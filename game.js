@@ -493,9 +493,9 @@ function updateGhosts(dt) {
 }
 
 function ghostSpeed(ghost) {
-  if (ghost.mode === "eaten") return Math.max(118, pacman.speed * 1.35);
-  if (ghost.mode === "frightened") return Math.max(46, pacman.speed * 0.68);
-  return Math.max(62, pacman.speed * 0.9);
+  if (ghost.mode === "eaten") return Math.max(140, pacman.speed * 1.65);
+  if (ghost.mode === "frightened") return Math.max(58, pacman.speed * 0.82);
+  return Math.max(82, pacman.speed * 1.08);
 }
 
 function chooseGhostDirection(ghost) {
